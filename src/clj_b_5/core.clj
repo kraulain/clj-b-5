@@ -17,3 +17,8 @@
 
 ;;filter records using a keyword as predicate
 (filter :a [{:a 1} {:a 2} {:b 3} {:a false}])
+
+;; custom predicate function
+(filter (fn [x]
+          (not (zero? (mod x 3))))
+        (range 10))
