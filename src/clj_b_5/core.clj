@@ -9,3 +9,11 @@
 
 ;;increment all numbers in collection
 (map inc [1 3 5 7 9])
+
+;; Filter
+
+;;filter all even numbers from collection
+(filter even? (range 10))
+
+;;filter records using a keyword as predicate
+(filter :a [{:a 1} {:a 2} {:b 3} {:a false}])
