@@ -24,3 +24,6 @@
         (range 10))
 
 ;;identity
+
+;;constantly
+
