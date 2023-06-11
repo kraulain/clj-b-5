@@ -28,3 +28,5 @@
 ;;constantly
 
 ;;complement
+
+;;partial
