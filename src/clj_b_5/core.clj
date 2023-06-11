@@ -22,3 +22,5 @@
 (filter (fn [x]
           (not (zero? (mod x 3))))
         (range 10))
+
+;;identity
