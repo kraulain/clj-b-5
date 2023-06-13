@@ -24,8 +24,17 @@
         (range 10))
 
 ;;identity
+(identity 10)
+
+(identity 200)
+
+(identity :a-keyword)
 
 ;;constantly
+(def my-func (constantly 5))
+(my-func)
+
+((constantly :hello))
 
 ;;complement
 
