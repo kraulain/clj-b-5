@@ -37,9 +37,17 @@
 ((constantly :hello))
 
 ;;complement
+(def non-pos? (complement pos?))
+(non-pos? -23)
+
+(def non-neg? (complement neg?))
+(non-neg? 54)
+
+((complement zero?) 9)
 
 ;;partial
-
+(def add-three (partial + 3))
+(add-three 4)
 
 
 
