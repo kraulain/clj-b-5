@@ -70,5 +70,15 @@ postal-code
 ((comp :postal-code :address) person)
 
 ;;juxt
+(def person {:first "john"
+             :middle "walkins"
+             :last "doe"})
+
+(def first-n-last (juxt :first :last))
+
+(first-n-last person)
 
 ;;apply
+(apply + [1 2])
+
+(apply + [])
