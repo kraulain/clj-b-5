@@ -49,11 +49,25 @@
 (def add-three (partial + 3))
 (add-three 4)
 
-
-
 ;;fnil
+(def safe-inc (fnil inc 0))
+(safe-inc nil)
 
 ;;comp
+(def person {:name "John Travolta"
+             :address {:street "123 mayor street"
+                       :postal-code 1234}})
+
+(def postal-code
+  (:postal-code (:address person)))
+
+postal-code
+
+(->> person
+     :address
+     :postal-code)
+
+((comp :postal-code :address) person)
 
 ;;juxt
 
