@@ -99,3 +99,18 @@ postal-code
   (length* [])
   (length* (range 10))
 )
+
+;;map
+
+(defn map*
+  "apply function f to each element in seq ls"
+  [f ls]
+  (if (empty? ls)
+    ()
+    (cons (f (first ls))
+          (map* f (rest ls)))))
+
+(comment
+  (map* inc [])
+  (map* inc (range 10))
+  (map* str (range 5)))
