@@ -114,3 +114,20 @@ postal-code
   (map* inc [])
   (map* inc (range 10))
   (map* str (range 5)))
+
+;; Filter
+
+(defn filter*
+  "Return all items in seq ls, that are truthy for predicate p?"
+  [p? ls]
+  (if (empty? ls)
+    ()
+    (if (p? (first ls))
+      (cons (first ls) (filter* p? (rest ls)))
+      (filter* p? (rest ls)))))
+
+(comment
+  (filter* even? (range 45))
+  (filter* nil? (range 10))
+  (filter* (complement nil?) (range 10))
+  )
