@@ -82,3 +82,20 @@ postal-code
 (apply + [1 2])
 
 (apply + [])
+
+
+;; Recursion exercises
+;;length
+
+(defn length*
+  "returns the length of a list"
+  [ls]
+  (if (empty? ls)
+    0
+    (+ 1 (length* (rest ls)))))
+
+(comment
+  (length* nil)
+  (length* [])
+  (length* (range 10))
+)
