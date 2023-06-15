@@ -131,3 +131,22 @@ postal-code
   (filter* nil? (range 10))
   (filter* (complement nil?) (range 10))
   )
+
+;; Tail recursion
+
+(defn filter*-helper
+  "Helper function to do filter with tail recursion"
+  [p? ls acc]
+  (if (empty? ls)
+    acc
+    (if (p? (first ls))
+      (recur p? (rest ls) (conj acc (first ls)))
+      (recur p? (rest ls) acc))))
+
+(defn filter*
+  "return all items that are tru for predicate p?"
+  [p? ls]
+  (filter*-helper p? ls []))
+
+(comment
+  (filter* even? (range 10)))
