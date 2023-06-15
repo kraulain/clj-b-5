@@ -200,3 +200,15 @@ postal-code
       (recur (rest ls) (conj acc (f (first ls)))))))
 
 (map* inc (range 10))
+
+;; filter
+
+(defn filter* [p? ls]
+  (loop [ls ls acc []]
+    (if (empty? ls)
+      acc
+      (if (p? (first ls))
+        (recur (rest ls) (conj acc (first ls)))
+        (recur (rest ls) acc)))))
+
+(filter* even? (range 19))
