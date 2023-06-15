@@ -133,6 +133,7 @@ postal-code
   )
 
 ;; Tail recursion
+;;filter
 
 (defn filter*-helper
   "Helper function to do filter with tail recursion"
@@ -149,4 +150,23 @@ postal-code
   (filter*-helper p? ls []))
 
 (comment
-  (filter* even? (range 10)))
+  (filter* even? (range 10))
+  )
+
+;; map
+
+(defn map*-helper
+  "three argument helper fuction for map*"
+  [f ls acc]
+  (if (empty? ls)
+    acc
+    (recur f (rest ls) (conj acc (f (first ls))))))
+
+(defn map*
+  "map function f on all items in sequence ls"
+  [f ls]
+  (map*-helper f ls []))
+
+(comment
+  (map* inc (range 5))
+  )
