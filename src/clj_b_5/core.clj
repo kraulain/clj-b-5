@@ -170,3 +170,21 @@ postal-code
 (comment
   (map* inc (range 5))
   )
+
+;; length
+
+(defn length*-helper
+  "helper function for calculating the length of a sequence"
+  [ls acc]
+  (if (empty? ls)
+    acc
+    (recur (rest ls) (inc acc))))
+
+(defn length*
+  "returns the length of a sequence"
+  [ls]
+  (length*-helper ls 0))
+
+(comment
+  (length* #{1 2 3 4 5})
+  )
