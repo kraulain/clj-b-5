@@ -188,3 +188,15 @@ postal-code
 (comment
   (length* #{1 2 3 4 5})
   )
+
+;; Use loop-recur
+
+;; map
+
+(defn map* [f ls]
+  (loop [ls ls acc []]
+    (if (empty? ls)
+      acc
+      (recur (rest ls) (conj acc (f (first ls)))))))
+
+(map* inc (range 10))
